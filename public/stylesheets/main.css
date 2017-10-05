@@ -29,7 +29,7 @@ body {
 .page-header {
     background-color: #f5f5f5;
     padding: 20px 20px 10px;
-    margin: -20px -20px 20px;
+    margin: 0px -20px 20px;
 }
 
 /* Styles you shouldn't keep as they are for displaying this base example only */
@@ -67,7 +67,7 @@ body {
 }
 
 #messages {
-    bottom: 60px;
+    bottom: 100px;
     max-height: 420px;
     overflow: scroll;
     position: absolute;
@@ -80,7 +80,15 @@ body {
     left: 0;
     right: 0;
     width: auto;
-    height: 40px
+    height: 80px
+}
+
+#send {
+	position: absolute;
+	bottom:0;
+	right:0;
+	width:40px;
+	height:120px
 }
 
 .message {

@@ -18,13 +18,14 @@ public class RoomMessage  implements Serializable {
 
     @Id
     @ObjectId
-        public String id ;
+	public String id ;
 	public String roomName;
 	public String userName;
-        public String message;
+	public String message;
 
-        public RoomMessage()
-        {}
+	public String another;
+
+	public RoomMessage(){}
     
 	public RoomMessage(String roomName, String userName, String message) {
 		this.roomName = roomName;

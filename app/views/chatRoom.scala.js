@@ -37,3 +37,16 @@ $(function() {
     chatSocket.onmessage = receiveEvent
 
 })
+
+$(window).resize(function() {
+//	$('#talk').height($(window).height() );
+	$('#talk').width($(window).width() - 100);
+});
+
+
+$(window).load(function (){
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	$(window).trigger('resize');
+}
+});
+	
