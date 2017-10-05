@@ -16,5 +16,6 @@ libraryDependencies ++= Seq(
   "com.google.inject" % "guice" % "3.0",
   "com.typesafe.akka" %% "akka-actor" % akkaVersion,
   "com.typesafe.akka" %% "akka-remote" % akkaVersion,
-  "com.typesafe.akka" %% "akka-cluster" % akkaVersion
+  "com.typesafe.akka" %% "akka-cluster" % akkaVersion,
+  "net.vz.mongodb.jackson" % "play-mongo-jackson-mapper_2.10" % "1.1.0"
 )
