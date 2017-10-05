@@ -1,0 +1,176 @@
+@(username:String)(content: Html)
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+<!-- Mirrored from www.wanzi.cc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Aug 2017 10:40:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+        <title>走走旅游</title>
+		<meta name="keywords" content="包车,地接,地陪,当地向导,当地导游,中文导游,私人导游,导游,旅游,自由行"/>
+		<meta name="description" content="走走旅游,专业预定私人中文导游,私人导游服务.提供导游相关的如:包车,地接,地陪,当地向导,当地导游,自由行等服务"/>
+
+        <link href="http://static.zouzouyouyou.info/app/statics/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="shortcut icon" href="icon.png">
+        <link rel="stylesheet" href="http://static.zouzouyouyou.info/app/statics/css/common.css">
+        <link rel="stylesheet" href="http://static.zouzouyouyou.info/app/statics/css/swiper.min.css">
+		<link rel="stylesheet" href="http://static.zouzouyouyou.info/app/statics/emoji/emoji.css">
+		<link rel="stylesheet" href="http://static.zouzouyouyou.info/app/statics/js/promptbox/prompt_box.css">
+        <script src="http://static.zouzouyouyou.info/app/statics/js/jquery-1.8.3.min.js"></script>
+        <script src="http://static.zouzouyouyou.info/app/statics/js/bootstrap.min.js"></script>
+        <!--<script src="js/global.js"></script>-->
+        <script src="http://static.zouzouyouyou.info/app/statics/js/search.js"></script>
+        <script src="http://static.zouzouyouyou.info/app/statics/js/remscreen.js"></scri+pt>
+        <script src="http://static.zouzouyouyou.info/app/statics/js/fastclick.js"></script>
+		<script src="http://static.zouzouyouyou.info/app/statics/js/promptbox/prompt_box.js"></script>
+
+    </head>
+	<body>
+
+	  <div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+		  <div class="navbar-header">
+			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+			  <span class="sr-only"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+			<div class="phone-search">
+			  <a href="site/search.html"><input type="text" placeholder="请输入您想去的国家、城市"><i></i></a>
+			</div>
+			<a class="navbar-brand hidden-sm logo-web" href="index.html"><img src="http://static.zouzouyouyou.info/app/statics/images/logo-web.png" alt=""></a>
+			<a class="navbar-brand hidden-sm logo-phone" href="index.html"><img src="http://static.zouzouyouyou.info/app/statics/images/logo-phone.png" alt=""></a>
+		  </div>
+		  <div class="navbar-collapse collapse" role="navigation">
+			<ul class="nav navbar-nav nav-ul">
+			  <li class="home-page slide-li"><a href="index.html">首页</a></li>
+			  <li class="hidden-sm hidden-md order-li mian-top"><a href="site/demand.html" target="_blank">定制旅行</a></li>
+			  <li class="slide-li mian-top"><a href="site/html/id/why_guide.html">成为向导</a></li>
+			  <li class=" mian-top"><a href="site/group.html" target="_blank">团队企业服务</a></li>
+			  <li class="load-img">
+				<!--<li class="load-img">-->
+				<!--<a href="javascript:;">下载APP</a>-->
+				<!--<div class="load-section"><img src="app/statics/images/APP-img.png" alt="">-->
+				<!--<div>-->
+				<!--<p><span class="text-center">下载走走旅游</span><span-->
+				<!--class="text-center">下载走走旅游</span></p>-->
+				<!--<p><span class="text-center">旅行者端APP</span><span-->
+				<!--class="text-center">向导端APP</span></p>-->
+				<!--</div>-->
+				<!--</div>-->
+				<!--</li>-->
+			</li></ul>
+			<ul class="nav navbar-nav navbar-right hidden-sm nav-ul login-ul">
+			  <!--<li class="phone-num"><a href="javascript:;"><i></i>400-872-8336</a></a></li>-->
+			  <li class="help-center">
+				<a href="site/helpList.html">帮助中心<i></i></a>
+				<ul style="display: none;">
+				  <li><a href="site/helpDetail/id/58.html">如何预订向导？</a></li>
+				  <li><a href="site/helpDetail/id/61.html">什么是定制旅行服务？</a></li>
+				  <li><a href="site/helpDetail/id/57.html">如何成为一名优秀的向导？</a></li>
+				  <li><a href="site/helpList.html">查看更多常见问题与解答</a></li>
+				</ul>
+			  </li>
+<!--
+			  <input id="chatname" name="chatname" class="input-small" type="text" placeholder="Chatname" visible="flase">
+			  <input id="email" name="email" class="input-small" type="text" placeholder="Email">
+			  <input id="username" name="username" class="input-small" type="text" placeholder="Password"> -->
+			  <li><a href="localhost:9090/register" class="login-section">注册</a></li>
+			  <li><a href="localhost:9090/onLogin" class="login-line">登录</a></li>
+			</ul>
+		  </div>
+		</div>
+		</div>
+
+	  <script>
+		
+		
+		</script>
+
+
+
+	  <div class="container">
+		<div class="content">
+		  @content
+		  </div>
+	  </div>
+        <!-- 主题 -->
+        <!-- 右侧客服以及回到顶部 -->
+        <div class="suspend-section">
+        <!-- <div class='text-center'>
+                <span class="custom-btn right-suspend"></span>
+                <p class="text-color5 text-center">联系客服</p>
+            </div>-->
+            <!-- <div class='text-center go-back'>
+                <span class="back-btn right-suspend"></span>
+                <p class="text-color5 text-center">返回顶部</p>
+            </div> -->
+            <img src="app/statics/images/back.png" alt="">
+        </div>
+        <!-- 右侧客服以及回到顶部 -->
+        <!-- 底部 -->
+        <div class="main-white">
+            <div class="container footer-section">
+                <div class="row">
+                    <div class="col-sm-6 hidden-xs">
+                        <h5>客服热线</h5>
+                        <p><span class="tel-num text-center">电话</span><strong>13524331710</strong></p>
+                        <p><span class="tel-num text-center">邮箱</span><strong>contact@@guanhaitingtao.com.cn</strong></p>
+                        <p class="work-hours">接听时间：9:00-22:00（北京时间）</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h5>公司信息<i class="arrow-btn"></i></h5>
+                                <div class="hidden-section">
+                                    <p><a href="site/html/id/about_us.html">关于我们</a></p>
+                                    <a href="site/html/id/join_us.html">加入我们</a></p>
+                                    <p><a href="site/html/id/contact_us.html">联系我们</a></p>
+<!--                                    <p><a href="site/html/id/media.html">媒体报道</a></p> -->
+                                    <p><a href="site/html/id/map.html">网站地图</a></p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <h5>新手上路<i class="arrow-btn"></i></h5>
+                                <div class="hidden-section">
+                                    <p><a href="site/helpList.html">帮助中心</a></p>
+                                    <p><a href="site/html/id/terms_service.html">服务条款</a></p>
+                                    <p><a href="site/html/id/privacy_policy.html">隐私政策</a></p>
+                                    <p><a href="site/html/id/disclaimer.html">免责声明</a></p>
+                                    <p><a href="site/html/id/policy_notes.html">使用政策须知</a></p>
+                                    <p><a href="site/html/id/terms.html">保障计划条款</a></p>
+                                </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <h5>向导<i class="arrow-btn"></i></h5>
+                            <div class="hidden-section">
+                                <p><a href="site/html/id/why_guide.html">为什么成为向导</a></p>
+                                <p><a href="site/html/id/culture.html">向导服务标准</a></p>
+                                <p><a href="site/html/id/why_guide.html" >申请成为向导</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row text-bottom">
+                    <div class="col-sm-6 col-xs-12">
+                        <p class="text-color2 font-size1"></p>
+
+                        <p class="text-color2 font-size1">® 杭州观海听涛信息科技有限公司 2015-2017 zouzouyouyou.info </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部 -->
+	<script src="https://qiyukf.com/script/24c8bd3fd15d1272dc707fb2944bbc27.js" defer async></script>
+    <script>
+    </body>
+
+<!-- Mirrored from www.wanzi.cc/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 29 Aug 2017 10:42:29 GMT -->
+</html>

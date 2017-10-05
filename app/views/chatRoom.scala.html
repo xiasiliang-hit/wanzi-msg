@@ -1,17 +1,23 @@
 @(chatname: String, username: String)
 
-@main(username) {
-    
+@headerfooter(username){
+
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+	<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+
     <div class="page-header">
-        <h1>Welcome to the chat room @chatname <small>You are chatting as @username</small></h1>
+        <h1>走走旅游向导为您服务<small>您好 @username</small></h1>
     </div>
-    
+
+	<!--
     <div id="onError" class="alert-message error">
         <p>
             <strong>Oops!</strong> <span></span>
         </p>
     </div>
-    
+    -->
     <div id="onChat" class="row">
         <div class="span10" id="main">
             <div id="messages">
