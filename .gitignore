@@ -1,7 +1,9 @@
 /bin/
-
+.idea
 .project/
 .settings/
+.project
 .classpath
 target/
 logs/
+wanzi-msg.iml

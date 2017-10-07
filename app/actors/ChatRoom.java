@@ -8,67 +8,66 @@ import akka.actor.Props;
 import akka.actor.UntypedActor;
 //import akka.actor.AbstractPersistentActor;
 import java.util.*;
-import messages.*;
 
 public class ChatRoom extends UntypedActor {
 
-	@Override
-	public void onReceive(Object message) throws Exception {
-		
-		if (message instanceof UserConnection) {
-			UserConnection userConnection = (UserConnection) message;
-			ActorRef roomActor = (getContext().getChild(userConnection.roomName));
-						//			    ChatMessageSender cms = rooms.get(userConnection.roomName);
-			List<RoomMessage> historyMsgs = RoomMessage.loadHistoryMessages(userConnection.roomName);
-			PlayInternal.logger().info("load msgs[0] : " + userConnection.roomName + historyMsgs.get(0).message);
-			
-			if(roomActor != null) {
-				PlayInternal.logger().info("Use existing actor : " + userConnection.roomName);
-				//				rooms.get(roomName).add(userName);
+    @Override
+    public void onReceive(Object message) throws Exception {
 
-			} else {
-			    roomActor = (getContext().actorOf(Props.create(ChatMessageSender.class),userConnection.roomName));
-				PlayInternal.logger().info("Create new actor : " + userConnection.roomName);
+        if (message instanceof UserConnection) {
+            UserConnection userConnection = (UserConnection) message;
+            ActorRef roomActor = (getContext().getChild(userConnection.conversationId));
+            //ChatMessageSender cms = rooms.get(userConnection.conversationId);
+            List<RoomMessage> historyMsgs = RoomMessage.loadHistoryMessages(userConnection.conversationId);
+            //PlayInternal.logger().info("load msgs[0] : " + userConnection.conversationId + historyMsgs.get(0).message);
 
-				//				cms = roomActor;
-				//				rooms.put(userConnection.roomName, roomActor);
+            if (roomActor != null) {
+                PlayInternal.logger().info("Use existing actor : " + userConnection.conversationId);
+                //				rooms.get(conversationId).add(userId);
 
-				/*Conversation c = Conversation.getConversation(userConnection.roomName);
-				if (c != null)
-				    rooms.put(c.roomName, c);
+            } else {
+                roomActor = (getContext().actorOf(Props.create(ChatMessageSender.class), userConnection.conversationId));
+                PlayInternal.logger().info("Create new actor : " + userConnection.conversationId);
+
+                //				cms = roomActor;
+                //				rooms.put(userConnection.conversationId, roomActor);
+
+				/*Conversation c = Conversation.getConversation(userConnection.conversationId);
+                if (c != null)
+				    rooms.put(c.conversationId, c);
 				else
-				    rooms.put(userConnection.roomName, new Conversation(userConnection.roomName));
+				    rooms.put(userConnection.conversationId, new Conversation(userConnection.conversationId));
 				*/
-			}
-			
-			roomActor.tell(userConnection, getSender());
-		} else if (message instanceof RoomMessage) {
-			RoomMessage roomMessage = (RoomMessage) message;
+            }
 
-						ActorRef roomActor = getContext().getChild(roomMessage.roomName);
-						//			ChatMessageSender cms = rooms.get(roomMessage.roomName);
-			if(roomActor != null) {
-				roomActor.tell(roomMessage, null);
-				//cms.msgs.add(roomMessage);
-			}
+            roomActor.tell(userConnection, getSender());
+        } else if (message instanceof RoomMessage) {
+            RoomMessage roomMessage = (RoomMessage) message;
 
-RoomMessage.saveMessage(roomMessage);
-//rooms.get(roomMessage.roomName).msgs.add(roomMessage);						
-		}
+            ActorRef roomActor = getContext().getChild(roomMessage.conversationId);
+            //			ChatMessageSender cms = rooms.get(roomMessage.conversationId);
+            if (roomActor != null) {
+                roomActor.tell(roomMessage, null);
+                //cms.msgs.add(roomMessage);
+            }
+
+            RoomMessage.saveMessage(roomMessage);
+//rooms.get(roomMessage.conversationId).msgs.add(roomMessage);
+        }
 
 		/*else if (message instanceof Persistent){
-		    Persistent persistent = (Persistent)message;
-		    this.persistentId = roomName;
+            Persistent persistent = (Persistent)message;
+		    this.persistentId = conversationId;
 		    
 		    Object payload = persistent;
 		    Long sequenceNr = persistent.sequenceNr();
 		}
 		*/
-		    
-		else {
+
+        else {
             unhandled(message);
         }
-	}
+    }
 
     /*
     @Override
@@ -78,12 +77,11 @@ RoomMessage.saveMessage(roomMessage);
     */
 
 
-    
-    public static HashMap<String, ChatMessageSender > rooms = new HashMap< String, ChatMessageSender >();  // roomName: [userName1, userName2...]
+    public static HashMap<String, ChatMessageSender> rooms = new HashMap<String, ChatMessageSender>();  // conversationId: [userName1, userName2...]
 
     //ArrayList<Conversation> cs = new ArrayList<Conversation> ();
 
-    
+
     //    private static JacksonDBCollection<ChatRoom, String> coll = MongoDB.getCollection("chatroom", ChatRoom.class, String.class);
     /*
     public static void saveConversation(Conversation c) {
@@ -96,7 +94,7 @@ RoomMessage.saveMessage(roomMessage);
     }
     */
 
-    
+
     //    static private ArrayList<RoomMessage> msgs = new ArrayList<RoomMessage>();
     //static private 
 }

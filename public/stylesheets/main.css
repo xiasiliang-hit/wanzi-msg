@@ -59,16 +59,16 @@ body {
 
 #main {
     position: relative;
-    overflow: hidden;
+
 }
 
 #onError, #onChat {
-    display: none;
+
 }
 
 #messages {
     bottom: 100px;
-    max-height: 420px;
+    height: 420px;
     overflow: scroll;
     position: absolute;
     width: 90%;
@@ -87,8 +87,8 @@ body {
 	position: absolute;
 	bottom:0;
 	right:0;
-	width:40px;
-	height:120px
+	width:70px;
+	height:80px
 }
 
 .message {
