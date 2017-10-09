@@ -1,31 +1,51 @@
-@(chatname: String, username: String)
+@import messages.RoomMessage
+@(conversationId: String, userId: String, another: AUser, historyMessages: List[RoomMessage])
 
-@headerfooter(username){
+@headerfooter(session.get("username")) {
+    <div class="container">
+        <div class="content">
 
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
-	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-	<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-    <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+            <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+            <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+            <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+            <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
 
-    <div class="page-header">
-        <h1>向导为您服务 </h1> <div align="right"><small > 您好 @username</small></div>
-    </div>
+            <div class="page-header">
+                @if(another.`type`.equals("GUIDER")) {
+                    <h1>@another.city_and_country 的 @another.name 向导为您服务 </h1>
+                }else{
+                    <h1>@another.name 用户向您咨询 </h1>
+                }
+                <div align="right">
+                    <small > 您好 @session().get("username")</small>
+                </div>
+            </div>
 
-	<!--
+                <!--
     <div id="onError" class="alert-message error">
         <p>
             <strong>Oops!</strong> <span></span>
         </p>
     </div>
     -->
-    <div id="onChat" class="row">
-        <div class="span10" id="main">
-            <div id="messages">
+            <div id="onChat" class="row">
+                <div class="span10" id="main">
+                    <div id="messages">
+                    @if(!historyMessages.isEmpty) {
+                        @for(msg <- (historyMessages)) {
+                            <div class="message talk">
+                                <span>@msg.userName @msg.dateTime</span>
+                                <p>@msg.message</p>
+                            </div>
+                        }
+                    }
+                    </div>
+                    <textarea id="talk"></textarea> <input class="btn" id="send" value="发送" type="button" onclick="sendMessage()">
+                </div>
             </div>
-            <textarea id="talk"></textarea> <!-- <button id="sendbutton" class="button" type="button"></button> -->
+
+            <script type="text/javascript" charset="utf-8" src="@routes.Application.chatRoomJs(conversationId, userId, another.id)"></script>
         </div>
     </div>
-    
-    <script type="text/javascript" charset="utf-8" src="@routes.Application.chatRoomJs(chatname, username)"></script>
-    
+
 }

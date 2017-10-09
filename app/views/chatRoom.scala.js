@@ -1,52 +1,72 @@
-@(chatname:String, username: String)
+@(conversationId: String, userId: String, anotherId: String)
 
-$(function() {
-	
-	$("#onChat").show()
-	
-    var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket
-    var chatSocket = new WS("@routes.Application.chat(chatname, username).webSocketURL(request)")
-
-    var sendMessage = function() {
-        chatSocket.send(JSON.stringify(
-            {text: $("#talk").val()}
-        ))
-        $("#talk").val('')
+var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket;
+var chatSocket = new WS("@routes.Application.chat(conversationId, userId, session().get("username"), anotherId).webSocketURL(request)");
+var handleReturnKey = function (e) {
+    if (e.charCode == 13 || e.keyCode == 13) {
+        e.preventDefault()
+        //sendMessage();
     }
+};
+var receiveEvent = function (event) {
+    var data = JSON.parse(event.data);
+    // Create the message element
+    var el = $('<div class="message"><span></span><p></p></div>');
+    $("span", el).text(data.user + "  " + data.dateTime);
+    $("p", el).text(data.message);
+    $(el).addClass(data.kind);
+    $('#messages').append(el);
+};
 
-    var receiveEvent = function(event) {
-        var data = JSON.parse(event.data)
-
-        // Create the message element
-        var el = $('<div class="message"><span></span><p></p></div>')
-        $("span", el).text(data.user)
-        $("p", el).text(data.message)
-        $(el).addClass(data.kind)
-        $('#messages').append(el)
-    }
-
-    var handleReturnKey = function(e) {
-        if(e.charCode == 13 || e.keyCode == 13) {
-            e.preventDefault()
-            sendMessage()
-        }
-    }
-
-    $("#talk").keypress(handleReturnKey)
-
-    chatSocket.onmessage = receiveEvent
-
-})
-
-$(window).resize(function() {
-//	$('#talk').height($(window).height() );
-	$('#talk').width($(window).width() - 100);
-});
-
-
-$(window).load(function (){
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	$(window).trigger('resize');
+function sendMessage() {
+    send(JSON.stringify({text: $("#talk").val()}));
+    $("#talk").val('');
 }
+
+function send(msg) {
+    waitForSocketConnection(chatSocket, function () {
+        chatSocket.send(msg);
+    });
+}
+
+function waitForSocketConnection(socket, callback) {
+    setTimeout(
+        function () {
+            if (socket.readyState === 1) {
+                if (callback !== undefined) {
+                    callback();
+                }
+                return;
+            } else {
+                waitForSocketConnection(socket, callback);
+            }
+        }, 5);
+}
+$(window).resize(function () {
+//	$('#talk').height($(window).height() );
+    $('#talk').width($(window).width() - 100);
 });
-	
+
+// $(window).onloadend(function () {
+//     chatSocket.onmessage = receiveEvent;
+//     $("#onChat").show();
+//     $("#talk").keypress(handleReturnKey);
+// });
+
+
+
+function init()
+{
+    $("#onChat").show();
+    testWebSocket();
+}
+
+function testWebSocket()
+{
+    chatSocket.onopen = function(evt) {  };
+    chatSocket.onclose = function(evt) {  };
+    chatSocket.onmessage = function(evt) { receiveEvent(evt) };
+    chatSocket.onerror = function(evt) { };
+}
+
+window.addEventListener("load", init, false);

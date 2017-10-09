@@ -15,14 +15,14 @@ public class UserConnection implements Serializable {
 		CONNECTED, DISCONNECTED
 	}
 
-	public final String roomName;
-	public final String userName;
+	public final String conversationId;
+	public final String userId;
 	public final WebSocket.Out<JsonNode> channel;
 	public final ConnectionType connectionType;
 
-	public UserConnection(String roomName, String userName, Out<JsonNode> channel, ConnectionType connectionType) {
-		this.roomName = roomName;
-		this.userName = userName;
+	public UserConnection(String conversationId, String userId, Out<JsonNode> channel, ConnectionType connectionType) {
+		this.conversationId = conversationId;
+		this.userId = userId;
 		this.channel = channel;
 		this.connectionType = connectionType;
 	}
