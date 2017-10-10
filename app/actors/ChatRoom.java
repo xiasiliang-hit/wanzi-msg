@@ -46,6 +46,7 @@ public class ChatRoom extends UntypedActor {
 
             ActorRef roomActor = getContext().getChild(roomMessage.conversationId);
             //			ChatMessageSender cms = rooms.get(roomMessage.conversationId);
+	    roomMessage.message  = filter(roomMessage.message);
             if (roomActor != null) {
                 roomActor.tell(roomMessage, null);
                 //cms.msgs.add(roomMessage);
@@ -76,6 +77,23 @@ public class ChatRoom extends UntypedActor {
     }
     */
 
+    private String filter(String message)
+    {
+	String re = message;
+	String regex = "[0-9]{10,20}";
+
+	//	re.replaceAll(regex, "********");
+	//	re.replaceAll("wechat", "");
+	//re.replaceAll("微信","");
+	
+	if (re.length()>=10 && re.matches(regex) )
+	    {
+		re = "**********"; 
+	    }
+
+	return re;
+    }
+    
 
     public static HashMap<String, ChatMessageSender> rooms = new HashMap<String, ChatMessageSender>();  // conversationId: [userName1, userName2...]
 

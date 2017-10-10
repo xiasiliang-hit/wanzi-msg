@@ -1,0 +1,11 @@
+@**
+
+@import models.Cmd
+
+@(cmds : List[Cmd])
+
+@for (cmd <- cmds){
+<a href="@cmd.href" class="@cmd.cl">"@cmd.name"</a>
+}
+
+**@
