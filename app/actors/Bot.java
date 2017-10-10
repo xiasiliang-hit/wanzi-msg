@@ -119,14 +119,14 @@ public class Bot extends UntypedActor {
 		{
 		    return views.html.booking.render().toString();
 		}
-		/*
+		
 		else if(ask.contains("@"))
 		    {
 			return views.html.knowledgequery.render(ask.substring(1), "AIzaSyCD2UQ1lNnpgOO8AlyQemW4IpoNj9GnjPA").toString();
 			//List<Entity> ens = learn(ask);
 			//			return views.html.entities.render(ens).toString();
 		    }
-		*/
+		
 	    }
 	    else  //not ready
 	    {
@@ -135,9 +135,10 @@ public class Bot extends UntypedActor {
 
 	    return null;
     }
-
+    /*
     private void learn(String ask)
     {
 	KnowledgeQuery.query(ask.substring(1));
-    }
+	}
+    */
 }
