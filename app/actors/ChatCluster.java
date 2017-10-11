@@ -2,7 +2,6 @@ package actors;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import messages.NotifyAll;
 import messages.RoomMessage;
 import messages.UserConnection;
@@ -20,11 +19,13 @@ public class ChatCluster extends UntypedActor {
 	private final Cluster cluster;
 	private final List<Member> clusterMemberList;
 	private final ActorRef chatRoom;
-
+        private final ActorRef bot;
+    
 	public ChatCluster() {
 		cluster = Cluster.get(getContext().system());
 		clusterMemberList = new ArrayList<Member>();
 		chatRoom = getContext().actorOf(Props.create(ChatRoom.class));
+		bot = getContext().actorOf(Props.create(Bot.class));
 	}
 	
 	public static void userConnetion(UserConnection connection) {
@@ -53,9 +54,11 @@ public class ChatCluster extends UntypedActor {
 		if (message instanceof UserConnection) {
 			UserConnection userConnection = (UserConnection) message;
 			chatRoom.tell(userConnection, getSelf());
+			bot.tell(userConnection,getSelf());
 		} else	if (message instanceof RoomMessage) {
 			RoomMessage roomMessage = (RoomMessage) message;
-			chatRoom.tell(roomMessage, getSelf());	
+			chatRoom.tell(roomMessage, getSelf());
+			bot.tell(roomMessage,getSelf());
 		} else if (message instanceof NotifyAll ) {
 			RoomMessage roomMessage = ((NotifyAll) message).message;
 			

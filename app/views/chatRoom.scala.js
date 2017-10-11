@@ -12,8 +12,8 @@ var receiveEvent = function (event) {
     var data = JSON.parse(event.data);
     // Create the message element
     var el = $('<div class="message"><span></span><p></p></div>');
-    $("span", el).text(data.user + "  " + data.dateTime);
-    $("p", el).text(data.message);
+    $("span", el).text(data.user);   //+ "  " + data.dateTime);
+    $("p", el).html(data.message);
     $(el).addClass(data.kind);
     $('#messages').append(el);
 };
@@ -70,3 +70,27 @@ function testWebSocket()
 }
 
 window.addEventListener("load", init, false);
+
+var handleReturnKey = function(e) {
+    if(e.charCode == 13 || e.keyCode == 13) {
+	e.preventDefault();
+	sendMessage();
+    }
+}
+
+$("#talk").keypress(handleReturnKey);
+
+chatSocket.onmessage = receiveEvent;
+
+//$(document).ready(function() {
+//    $('.link').bind('click', function() {
+
+
+//	$.ajax({
+//	    url: $(this).attr("lk")
+//	    success:function(data) {
+//		$(this).html(data);
+//	    }
+//	});
+//    });
+//});

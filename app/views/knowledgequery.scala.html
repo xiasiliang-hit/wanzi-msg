@@ -1,0 +1,28 @@
+@(query: String)(key:String)
+
+
+<script>
+    var service_url = 'https://kgsearch.googleapis.com/v1/entities:search';
+    var params = {
+    'query': '@query',
+    'limit': 5,
+    'indent': true,
+    'key' : '@key',
+    };
+
+
+    $.getJSON(service_url + '?callback=?', params, function(response) {
+    $.each(response.itemListElement, function(i, element) {
+
+    //    $("#d").append("<a>$(element['result']['name'])</a>");
+
+    $('<a>', {text:element['result']['name']+"  ", href:element['result']['url']}).appendTo($("#d")) ;
+	
+//	  $("#d" a).attr('href', element['result']['url']);
+      });
+});
+</script>
+<div id="d"></div>
+    
+
+
