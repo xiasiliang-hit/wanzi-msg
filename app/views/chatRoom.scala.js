@@ -15,7 +15,8 @@ var receiveEvent = function (event) {
     $("span", el).text(data.user);   //+ "  " + data.dateTime);
     $("p", el).html(data.message);
     $(el).addClass(data.kind);
-    $('#messages').append(el);
+    $('#msg-content').append(el);
+    $("#messages").scrollTop = 999999+"px";
 };
 
 function sendMessage() {
@@ -44,7 +45,8 @@ function waitForSocketConnection(socket, callback) {
 }
 $(window).resize(function () {
 //	$('#talk').height($(window).height() );
-    $('#talk').width($(window).width() - 100);
+    $('#talk').width($(window).width() - 200);
+    //$('#send')
 });
 
 // $(window).onloadend(function () {

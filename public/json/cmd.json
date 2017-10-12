@@ -1,198 +1,220 @@
-{    
-    "name": "@zz",
-    "cmds": "@zz@走走",
-    "cl": "none-leaf",
-    "href":"#",
-    "link": "#",
-    "sub":[ {"name": "@hotel",
-	     "cmds": "@hotel@accommodation@酒店@住宿",
-	     "cl": "none-leaf",
-	     "href":"#",
-	     "link": "#",
-	     "sub":[ {"name": "@booking",
-		      "cmds": "@booking@缤客",
-		      "cl": "leaf",
-		      "href":"http://www.booking.com",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		     
-		     {"name": "@airbnb",
-		      "cmds": "@airbnb@爱彼迎",
-		      "cl": "leaf",
-		      "href":"htpp://www.airbnb.com",
-		      "link": "#",
-		      "sub":[
-		      ]},
-
-		     {"name": "@ctrip",
-		      "cmds": "@ctrip@携程@quanr@去哪儿",
-		      "cl": "leaf",
-		      "href":"htpp://www.ctrip.com",
-		      "link": "#",
-		      "sub":[
-		      ]}
-	     ]},
-	    
-	    {"name": "@flight",
-	     "cmds": "@flight@plane@飞机@机票",
-	     "cl": "none-leaf",
-	     "href":"#",
-	     "link": "#",
-	     "sub":[ {"name": "@skysacnner",
-		      "cmds": "@skyscanner@天巡",
-		      "cl": "leaf",
-		      "href":"http://www.skyscanner.com",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		     
-		     {"name": "@qunar",
-		      "cmds": "@qunar@qunar",
-		      "cl": "leaf",
-		      "href":"http://www.qunar.com",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		   ]
-	    },
-
-	    {"name": "@train",
-	     "cmds": "@train@rail@火车@铁路"
-	     "cl": "nono-leaf",
-	      "href":"#",
-	     "link": "#",
-	     "sub":[ {"name": "@Eurorail",
-		      "cmds": "@Eurorail@欧铁",
-		      "counrty": "Europe",
-		      "cl": "leaf",
-		      "href":"https://www.eurail.com/",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		     {"name": "@DBahn",
-		      "cmds": "@Dbahn@GermanTrain@GermanRail@德铁@德国火车@德国铁路",
-		      "counrty": "Germany",
-		      "cl": "leaf",
-		      "href":"https://www.bahn.com",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		     {"name": "@NS.NL",
-		      "cmds": "@NSNL@DutchTrain@DutchRail@荷兰火车@荷兰铁路",
-		      "counrty": "Netherlands",
-		      "cl": "leaf",
-		      "href":"htpp://www.dbahn.com",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		     {"name": "@SBB",
-		      "cmds": "@SBB@瑞士铁路",
-		      "counrty": "Swizerlands",
-		      "cl": "leaf",
-		      "href":"https://www.sbb.ch/",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		     {"name": "@Renfe",
-		      "cmds": "@Renfe@西班牙火车@西班牙铁路",
-		      "counrty": "Spain",
-		      "cl": "leaf",
-		      "href":"https://www.renfe.com/",
-		      "link": "#",
-		      "sub":[
-		      ]},
-
-		     {"name": "@TGV",
-		      "cmds": "@TGV@FranchTrain@FranchRail@法国火车@法国铁路",
-		      "counrty": "France",
-		      "cl": "leaf",
-		      "href":"http://www.sncf.com/en/passengers",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		    
-		     {"name": "@Italiarail",
-		      "cmds": "@Italiarail@ItalianTrain@ItalianRail@意大利火车@意大利铁路",
-		      "counrty": "France",
-		      "cl": "leaf",
-		      "href":"https://www.italiarail.com/",
-		      "link": "#",
-		      "sub":[
-		      ]},		     		     
-	     ]
-	    },
-	    
-	    {"name": "@bus",
-	     "cl": "nono-leaf",
-	      "href":"#",
-	     "link": "#",
-	     "sub":[ {"name": "@FlixBus",
-		      "cmds": "@FlixBus@GermanBus@德国巴士@德国公交",
-		      "counrty": "Germany",
-		      "cl": "leaf",
-		      "href":"https://www.flixbus.com/",
-		      "link": "#",
-		      "sub":[
-		      ]},
-
-		     {"name": "@9292",
-		      "cmds": "@9292@DutchBus@荷兰巴士@荷兰公交",
-		      "counrty": "Netherlands",
-		      "cl": "leaf",
-		      "href":"https://9292.nl/en/",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		   ]
-	    },
-
-	    {"name": "@carRental",
-	     "cl": "nono-leaf",
-	      "href":"#",
-	     "link": "#",
-	     "sub":[ {"name": "@Avis",
-		      "cmds": "@Avis@安飞士租车",
-		      "counrty": "Global",
-		      "cl": "leaf",
-		      "href":"https://www.avis.com",
-		      "link": "#",
-		      "sub":[
-		      ]},
-
-		     {"name": "@Hertz",
-		      "cmds": "@Hertz@赫兹租车",
-		      "counrty": "Global",
-		      "cl": "leaf",
-		      "href":"https://9292.nl/en/",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		   ]
-	    },
-
-	    {"name": "@carPool",
-	     "cl": "nono-leaf",
-	      "href":"#",
-	     "link": "#",
-	     "sub":[ {"name": "@Balabalacar",
-		      "cmds": "@Balabala@Balabalacar@balabala拼车",
-		      "counrty": "Europe",
-		      "cl": "leaf",
-		      "href":"https://www.avis.com",
-		      "link": "#",
-		      "sub":[
-		      ]},
-
-		     {"name": "@Hertz",
-		      "cmds": "@Hertz@赫兹租车",
-		      "counrty": "Global",
-		      "cl": "leaf",
-		      "href":"https://9292.nl/en/",
-		      "link": "#",
-		      "sub":[
-		      ]},
-		   ]
-	    },
-	  ]
+{
+	"name": "@zz",
+	"cmds": "@zz@走走",
+	"cl": "none-leaf",
+	"href": "#",
+	"link": "#",
+	"sub": [
+		{
+			"name": "@hotel",
+			"cmds": "@hotel@accommodation@酒店@住宿",
+			"cl": "none-leaf",
+			"href": "#",
+			"link": "#",
+			"sub": [
+				{
+					"name": "@booking",
+					"cmds": "@booking@缤客",
+					"cl": "leaf",
+					"href": "http://www.booking.com",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@airbnb",
+					"cmds": "@airbnb@爱彼迎",
+					"cl": "leaf",
+					"href": "htpp://www.airbnb.com",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@ctrip",
+					"cmds": "@ctrip@携程@quanr@去哪儿",
+					"cl": "leaf",
+					"href": "htpp://www.ctrip.com",
+					"link": "#",
+					"sub": []
+				}
+			]
+		},
+		{
+			"name": "@flight",
+			"cmds": "@flight@plane@飞机@机票",
+			"cl": "none-leaf",
+			"href": "#",
+			"link": "#",
+			"sub": [
+				{
+					"name": "@skysacnner",
+					"cmds": "@skyscanner@天巡",
+					"cl": "leaf",
+					"href": "http://www.skyscanner.com",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@qunar",
+					"cmds": "@qunar@qunar",
+					"cl": "leaf",
+					"href": "http://www.qunar.com",
+					"link": "#",
+					"sub": []
+				}
+			]
+		},
+		{
+			"name": "@train",
+			"cmds": "@train@rail@火车@铁路",
+			"cl": "nono-leaf",
+			"href": "#",
+			"link": "#",
+			"sub": [
+				{
+					"name": "@Eurorail",
+					"cmds": "@Eurorail@欧铁",
+					"counrty": "Europe",
+					"cl": "leaf",
+					"href": "https://www.eurail.com/",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@DBahn",
+					"cmds": "@Dbahn@GermanTrain@GermanRail@德铁@德国火车@德国铁路",
+					"counrty": "Germany",
+					"cl": "leaf",
+					"href": "https://www.bahn.com",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@NS.NL",
+					"cmds": "@NSNL@DutchTrain@DutchRail@荷兰火车@荷兰铁路",
+					"counrty": "Netherlands",
+					"cl": "leaf",
+					"href": "htpp://www.dbahn.com",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@SBB",
+					"cmds": "@SBB@瑞士铁路",
+					"counrty": "Swizerlands",
+					"cl": "leaf",
+					"href": "https://www.sbb.ch/",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@Renfe",
+					"cmds": "@Renfe@西班牙火车@西班牙铁路",
+					"counrty": "Spain",
+					"cl": "leaf",
+					"href": "https://www.renfe.com/",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@TGV",
+					"cmds": "@TGV@FranchTrain@FranchRail@法国火车@法国铁路",
+					"counrty": "France",
+					"cl": "leaf",
+					"href": "http://www.sncf.com/en/passengers",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@Italiarail",
+					"cmds": "@Italiarail@ItalianTrain@ItalianRail@意大利火车@意大利铁路",
+					"counrty": "France",
+					"cl": "leaf",
+					"href": "https://www.italiarail.com/",
+					"link": "#",
+					"sub": []
+				}
+			]
+		},
+		{
+			"name": "@bus",
+			"cmds":"@bus",
+			"cl": "nono-leaf",
+			"href": "#",
+			"link": "#",
+			"sub": [
+				{
+					"name": "@FlixBus",
+					"cmds": "@FlixBus@GermanBus@德国巴士@德国公交",
+					"counrty": "Germany",
+					"cl": "leaf",
+					"href": "https://www.flixbus.com/",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@9292",
+					"cmds": "@9292@DutchBus@荷兰巴士@荷兰公交",
+					"counrty": "Netherlands",
+					"cl": "leaf",
+					"href": "https://9292.nl/en/",
+					"link": "#",
+					"sub": []
+				}
+			]
+		},
+		{
+			"name": "@carRental",
+			"cl": "nono-leaf",
+			"href": "#",
+			"link": "#",
+			"cmds":"@carRental",
+			"sub": [
+				{
+					"name": "@Avis",
+					"cmds": "@Avis@安飞士租车",
+					"counrty": "Global",
+					"cl": "leaf",
+					"href": "https://www.avis.com",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@Hertz",
+					"cmds": "@Hertz@赫兹租车",
+					"counrty": "Global",
+					"cl": "leaf",
+					"href": "https://9292.nl/en/",
+					"link": "#",
+					"sub": []
+				}
+			]
+		},
+		{
+			"name": "@carPool",
+			"cl": "nono-leaf",
+			"href": "#",
+			"link": "#",
+			"cmds":"@carPool",
+			"sub": [
+				{
+					"name": "@Balabalacar",
+					"cmds": "@Balabala@Balabalacar@balabala拼车",
+					"counrty": "Europe",
+					"cl": "leaf",
+					"href": "https://www.avis.com",
+					"link": "#",
+					"sub": []
+				},
+				{
+					"name": "@Hertz",
+					"cmds": "@Hertz@赫兹租车",
+					"counrty": "Global",
+					"cl": "leaf",
+					"href": "https://9292.nl/en/",
+					"link": "#",
+					"sub": []
+				}
+			]
+		}
+	]
 }
