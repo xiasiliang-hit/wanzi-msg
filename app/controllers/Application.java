@@ -4,6 +4,7 @@ import messages.NotifyAll;
 import messages.RoomMessage;
 import messages.UserConnection;
 import models.AUser;
+import models.CmdNode;
 import play.libs.F.Callback;
 import play.libs.F.Callback0;
 import play.mvc.Controller;
@@ -12,7 +13,6 @@ import play.mvc.WebSocket;
 import views.html.chatRoom;
 import views.html.index;
 import actors.ChatCluster;
-import akka.actor.ActorRef;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -62,6 +62,11 @@ public class Application extends Controller {
                 });
             }
         };
+    }
+
+    public static Result test(){
+        List<CmdNode> cmds = CmdNode.findByCmdLeaf("@zz");
+        return ok("test");
     }
 }
 

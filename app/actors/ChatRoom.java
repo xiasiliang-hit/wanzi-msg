@@ -85,15 +85,15 @@ public class ChatRoom extends UntypedActor {
 	//	re.replaceAll(regex, "********");
 	//	re.replaceAll("wechat", "");
 	//re.replaceAll("微信","");
-	
+
 	if (re.length()>=10 && re.matches(regex) )
 	    {
-		re = "**********"; 
+		re = "**********";
 	    }
 
 	return re;
     }
-    
+
 
     public static HashMap<String, ChatMessageSender> rooms = new HashMap<String, ChatMessageSender>();  // conversationId: [userName1, userName2...]
 
