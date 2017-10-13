@@ -34,6 +34,7 @@ public class Global extends GlobalSettings {
             jsonLoad.getCmdNode();
             saveList(JsonLoad.cmdTree);
         }
+
     }
  
     @Override
