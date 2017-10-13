@@ -5,17 +5,13 @@ import net.vz.mongodb.jackson.Id;
 import net.vz.mongodb.jackson.JacksonDBCollection;
 import net.vz.mongodb.jackson.ObjectId;
 import play.modules.mongodb.jackson.MongoDB;
-import utils.JsonLoad;
+
 
 import java.util.List;
 import java.util.regex.Pattern;
 
 public class CmdNode {
-    static {
-        JsonLoad jsonLoad = new JsonLoad();
-        jsonLoad.getCmdNode();
-        saveList(JsonLoad.cmdTree);
-    }
+
     @Id
     @ObjectId
     private String id;

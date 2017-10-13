@@ -8,6 +8,9 @@ import com.google.inject.Injector;
 import play.Application;  
 import play.GlobalSettings;
 import play.libs.Akka;
+import utils.JsonLoad;
+
+import static models.CmdNode.saveList;
 
 public class Global extends GlobalSettings {
     private Injector injector;
@@ -21,6 +24,13 @@ public class Global extends GlobalSettings {
             protected void configure() {
             }
         });
+
+        /**
+         * 加载CMD数据库
+         */
+        JsonLoad jsonLoad = new JsonLoad();
+        jsonLoad.getCmdNode();
+        saveList(JsonLoad.cmdTree);
     }
  
     @Override
