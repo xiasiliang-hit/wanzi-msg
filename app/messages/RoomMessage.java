@@ -27,7 +27,7 @@ public class RoomMessage implements Serializable {
     public RoomMessage() {
     }
 
-    public RoomMessage(String conversationId, String userId, String userName, String anotherId, String message) {
+    public RoomMessage(String conversationId, String userId, String userName, String anotherId, String message) { //$$danny: no need for userName
         this.conversationId = conversationId;
         this.userId = userId;
         this.message = message;
