@@ -144,4 +144,12 @@ public class CmdNode {
         String regex = ".*?\\" + cmd +  ".*";
         return coll.find(DBQuery.regex("parentCmds", Pattern.compile(regex))).toArray();
     }
+
+    public static Boolean hasCmd(){
+        Boolean result = false;
+        if (coll.getCount() > 0){
+            result = true;
+        }
+        return result;
+    }
 }
