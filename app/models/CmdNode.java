@@ -6,10 +6,12 @@ import net.vz.mongodb.jackson.JacksonDBCollection;
 import net.vz.mongodb.jackson.ObjectId;
 import play.modules.mongodb.jackson.MongoDB;
 
+
 import java.util.List;
 import java.util.regex.Pattern;
 
 public class CmdNode {
+
     @Id
     @ObjectId
     private String id;
