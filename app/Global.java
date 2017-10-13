@@ -3,9 +3,10 @@ import akka.actor.Props;
 
 import com.google.inject.AbstractModule;  
 import com.google.inject.Guice;  
-import com.google.inject.Injector;  
+import com.google.inject.Injector;
 
-import play.Application;  
+import models.CmdNode;
+import play.Application;
 import play.GlobalSettings;
 import play.libs.Akka;
 import utils.JsonLoad;
@@ -28,9 +29,11 @@ public class Global extends GlobalSettings {
         /**
          * 加载CMD数据库
          */
-        JsonLoad jsonLoad = new JsonLoad();
-        jsonLoad.getCmdNode();
-        saveList(JsonLoad.cmdTree);
+        if (!CmdNode.hasCmd()) {
+            JsonLoad jsonLoad = new JsonLoad();
+            jsonLoad.getCmdNode();
+            saveList(JsonLoad.cmdTree);
+        }
     }
  
     @Override
