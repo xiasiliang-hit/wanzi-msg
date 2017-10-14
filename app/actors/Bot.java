@@ -101,20 +101,28 @@ public class Bot extends UntypedActor {
 		    }
 	    }
 	*/
-        if (ready == true) {
+
+
+        if (ready == true) {  //$$danny: for seting toggle
             if (ask.contains("@booking")) {
                 return views.html.booking.render().toString();
             } else if (cmd != null) {
+
                 String msg = "";
+		List<CmdNode> cmdList = null;
+
                 if (cmd.getCl().equals("leaf")) {
-                    msg = "<a href=\"" + cmd.getHref() + "\" class=\"link\">" + cmd.getName() + "</a>";
+		    //                    msg = "<a href=\"" + cmd.getHref() + "\" class=\"link\">" + cmd.getName() + "</a>";
+		    cmdList = new ArrayList<CmdNode>();
+		    cmdList.add(cmd);
                 } else {
-                    List<CmdNode> cmdList = CmdNode.findByCmdLeaf(ask);
-                    for (CmdNode c : cmdList) {
-                        msg += "<a href=\"" + c.getHref() + "\" class=\"link\">" + c.getName() + "</a>";
-                    }
+		    cmdList = CmdNode.findByCmdLeaf(ask);
+                    /*for (CmdNode c : cmdList) {
+                        msg += "<a href=\"" + c.getHref() + "\" class=\"link\">" + c.getName() + "  </a>";
+			}*/
                 }
-                return msg;
+		//		PlayInternal.logger().info(msg); //return msg;		
+		return views.html.cmd.render(cmdList).toString();
             } else if (ask.contains("@")) {
                 return views.html.knowledgequery.render(ask.substring(1), "AIzaSyCD2UQ1lNnpgOO8AlyQemW4IpoNj9GnjPA").toString();
                 //List<Entity> ens = learn(ask);
