@@ -1,7 +1,7 @@
 @import messages.RoomMessage
 @(conversationId: String, userId: String, another: AUser, historyMessages: List[RoomMessage])
 
-    @headerfooter(session.get("username")) {
+@headerfooter(session.get("username")) {
         <div class="container">
             <div class="content">
 
@@ -14,7 +14,7 @@
                     @if(another.`type`.equals("GUIDER")) {
                         <h1>@another.city_and_country 的 @another.name 向导为您服务 </h1>
                     } else {
-                        <h1>@another.name 用户向您咨询 </h1>
+                        <h1>@another.name 向您咨询 </h1>
                     }
                     <div align="right">
                         <small > 您好 @session().get("username")</small>
@@ -38,12 +38,7 @@
                                         <span>@msg.userName</span>
                                         <p>@Html(msg.message)</p>
                                     </div>
-                                }
-                                <script>
-                                  window.onload = function () {
-                                      $("#messages").scrollTop = 999999+"px";
-                                  };
-                                </script>
+									}
                             }
                             </div>
                             <div id="msg-end" style="overflow: hidden"></div>
@@ -55,5 +50,4 @@
                 <script type="text/javascript" charset="utf-8" src="@routes.Application.chatRoomJs(conversationId, userId, another.id)"></script>
             </div>
         </div>
-
-    }
+}

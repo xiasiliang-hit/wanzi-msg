@@ -43,9 +43,11 @@ function waitForSocketConnection(socket, callback) {
             }
         }, 5);
 }
+
 $(window).resize(function () {
 //	$('#talk').height($(window).height() );
     $('#talk').width($(window).width() - 200);
+
     //$('#send')
 });
 
@@ -54,7 +56,6 @@ $(window).resize(function () {
 //     $("#onChat").show();
 //     $("#talk").keypress(handleReturnKey);
 // });
-
 
 
 function init()
@@ -81,8 +82,14 @@ var handleReturnKey = function(e) {
 }
 
 $("#talk").keypress(handleReturnKey);
-
 chatSocket.onmessage = receiveEvent;
+
+
+@*
+	window.onload = function () {
+		$("#messages").scrollTop = 999999+"px";
+	};
+*@
 
 //$(document).ready(function() {
 //    $('.link').bind('click', function() {

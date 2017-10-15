@@ -71,7 +71,7 @@ body {
     height: 420px;
     overflow: scroll;
     position: absolute;
-    width: 90%;
+    width: 85%;
 }
 
 #talk {
@@ -134,4 +134,10 @@ body {
 
 #talk {
 	width: 89%;
+}
+
+h1 {
+	font:sans-serif;
+	font-size:large;
+	color:skyblue;
 }
