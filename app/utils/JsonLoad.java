@@ -32,6 +32,7 @@ public class JsonLoad {
         jsonStr = jsonStr.replace("\t","");
         jsonStr = jsonStr.replace(" ","");
         jsonStr = jsonStr.trim();
+		//		jsonStr = jsonStr.trim().toLowerCase();
         JsonObject obj = new JsonParser().parse(jsonStr).getAsJsonObject();
         CmdNode cmdTree = new CmdNode();
         setCmdTree(cmdTree,obj,"");
