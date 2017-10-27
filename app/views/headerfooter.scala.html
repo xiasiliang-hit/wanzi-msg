@@ -1,5 +1,6 @@
 @(username:String)(content: Html)
-
+@import java.lang.String; val webserverhost="http://test.zouzouyouyou.info";
+@import java.lang.String; val statichost="http://static.zouzouyouyou.info";
 
 
 <!DOCTYPE html>
@@ -51,12 +52,12 @@
 		  <div class="navbar-collapse collapse" role="navigation">
 			<ul class="nav navbar-nav nav-ul">
 			  <li class="home-page slide-li"><a href="index.html">首页</a></li>
-			  <li class="hidden-sm hidden-md order-li mian-top"><a href="site/demand.html" target="_blank">定制旅行</a></li>
-			  <li class="slide-li mian-top"><a href="site/html/id/why_guide.html">成为向导</a></li>
-			  <li class=" mian-top"><a href="site/group.html" target="_blank">团队企业服务</a></li>
+			  <li class="hidden-sm hidden-md order-li mian-top"><a href="@webserverhost/site/demand.html" target="_blank">定制旅行</a></li>
+			  <li class="slide-li mian-top"><a href="@webserverhost/site/html/id/why_guide.html">成为向导</a></li>
+			  <li class=" mian-top"><a href="@webserverhost/site/group.html" target="_blank">团队企业服务</a></li>
 			  <li class="load-img">
 				<li class="load-img">
-				<a href="http://www.zouzouyouyou.info"></a>
+				<a href="@webserverhost"></a>
 				<div class="load-section"><img src="app/statics/images/logo-mobile.png" alt="">
 				<!--<div>-->
 				<!--<p><span class="text-center">下载走走旅游</span><span-->
