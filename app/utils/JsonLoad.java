@@ -41,7 +41,7 @@ public class JsonLoad {
     public void setCmdTree(CmdNode cmdNode, JsonObject cmdJson, String parentCmds){
         cmdNode.setName(cmdJson.get("name").getAsString());
         cmdNode.setCl(cmdJson.get("cl").getAsString());
-        cmdNode.setCmds(cmdJson.get("cmds").getAsString());
+        cmdNode.setCmds(cmdJson.get("cmds").getAsString().toLowerCase());
         cmdNode.setHref(cmdJson.get("href").getAsString());
         cmdNode.setLink(cmdJson.get("link").getAsString());
         cmdNode.setParentCmds(parentCmds);

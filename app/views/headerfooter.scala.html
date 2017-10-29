@@ -30,6 +30,7 @@
 		<script src="http://static.zouzouyouyou.info/app/statics/js/promptbox/prompt_box.js"></script>
 
     </head>
+
 	<body>
 
 	  <div class="navbar navbar-inverse navbar-fixed-top">
@@ -83,8 +84,12 @@
 			  <input id="chatname" name="chatname" class="input-small" type="text" placeholder="Chatname" visible="flase">
 			  <input id="email" name="email" class="input-small" type="text" placeholder="Email">
 			  <input id="username" name="username" class="input-small" type="text" placeholder="Password"> -->
-			  <li><a href="localhost:9090/register" class="login-section">注册</a></li>
-			  <li><a href="localhost:9090/onLogin" class="login-line">登录</a></li>
+                @if(session().get("username")==null) {
+                    <li><a href="/register" class="login-section">注册</a></li>
+                    <li><a href="/login" class="login-line">登录</a></li>
+                } else {
+                    <li style="padding: 15px;">欢迎您，@session().get("username")<a href="/logout" style="display: inline">退出登录</a></li>
+                }
 			</ul>
 		  </div>
 		</div>
