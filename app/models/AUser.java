@@ -104,8 +104,8 @@ public class AUser {
     public String guider_price = ""; //徒步旅行收费
     public String guiderdrive_price = ""; //五座车收费
     public String guiderpickup_price = ""; //五座车接机收费
-
-
+	//	public HashMap<String, int> service_items = new HashMap<String, int>();  // put service type into map <"service name": price>
+	
     public static String GUIDER = "GUIDER";
     public static String TRAVELLER = "TRAVELLER";
 

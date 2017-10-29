@@ -26,7 +26,7 @@ public class Bot extends UntypedActor {
     private static boolean ready = true;
 
     public static String name = "走走ZZ";
-    public static String id = "FFFFFFFF";
+    public static String id = "ffffffffffffffffffffffff";
 
     private Html hotel_response = Html.apply("");
     private Html fligt_response = Html.apply("");
@@ -102,29 +102,27 @@ public class Bot extends UntypedActor {
 	    }
 	*/
 
-
         if (ready == true) {  //$$danny: for seting toggle
             if (ask.contains("@booking")) {
                 return views.html.booking.render().toString();
-            } else if (cmd != null) {
-
-                String msg = "";
-		List<CmdNode> cmdList = null;
-
+            } else if (ask.contains("@") && cmd != null) {
+				//                String msg = "";
+				List<CmdNode> cmdList = null;
                 if (cmd.getCl().equals("leaf")) {
-		    //                    msg = "<a href=\"" + cmd.getHref() + "\" class=\"link\">" + cmd.getName() + "</a>";
-		    cmdList = new ArrayList<CmdNode>();
-		    cmdList.add(cmd);
+					//                    msg = "<a href=\"" + cmd.getHref() + "\" class=\"link\">" + cmd.getName() + "</a>";
+					cmdList = new ArrayList<CmdNode>();
+					cmdList.add(cmd);
                 } else {
-		    cmdList = CmdNode.findByCmdLeaf(ask);
+					cmdList = CmdNode.findByCmdLeaf(ask);
                     /*for (CmdNode c : cmdList) {
                         msg += "<a href=\"" + c.getHref() + "\" class=\"link\">" + c.getName() + "  </a>";
-			}*/
+						}*/
                 }
 		//		PlayInternal.logger().info(msg); //return msg;		
 		return views.html.cmd.render(cmdList).toString();
             } else if (ask.contains("@")) {
-                return views.html.knowledgequery.render(ask.substring(1), "AIzaSyCD2UQ1lNnpgOO8AlyQemW4IpoNj9GnjPA").toString();
+				return null;
+				//return views.html.knowledgequery.render(ask.substring(1), "AIzaSyCD2UQ1lNnpgOO8AlyQemW4IpoNj9GnjPA").toString();
                 //List<Entity> ens = learn(ask);
                 //			return views.html.entities.render(ens).toString();
             }

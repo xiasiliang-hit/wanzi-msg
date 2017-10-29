@@ -32,7 +32,7 @@
 					"name": "@ctrip",
 					"cmds": "@ctrip@携程@quanr@去哪儿",
 					"cl": "leaf",
-					"href": "htpp://www.ctrip.com",
+					"href": "http://www.ctrip.com",
 					"link": "#",
 					"sub": []
 				}
