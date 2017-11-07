@@ -2,7 +2,14 @@
 @(conversationId: String, userId: String, another: AUser, historyMessages: List[RoomMessage])
 
 @headerfooter(session.get("username")) {
-        <div class="container">
+
+<div class="container col-sm-1" style="top:105px;left:60px;width:20px">
+  <a class="btn btn-info button" href="">用户1</a>
+  <a class="btn btn-info button" href="">用户2</a>
+  <a class="btn btn-info button" href="">用户3</a>
+</div>
+
+<div class="container">
             <div class="content">
 
                 <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
@@ -12,7 +19,7 @@
 
                 <div class="page-header">
                     @if(another.`type`.equals("GUIDER")) {
-                        <h1>@another.city_and_country 的 @another.name 向导为您服务 </h1>
+                        <h1>@another.city_and_country 的 @another.name 向导为您服务</h1>
                     } else {
                         <h1>@another.name 向您咨询 </h1>
                     }
@@ -20,8 +27,25 @@
                         <small > 您好 @session().get("username")</small>
                     </div>
                 </div>
-
-                    <!--
+                <!--我的想法 想放在一行 不知道行不行
+                                <div class="page-header">
+                    @if(another.`type`.equals("GUIDER")) {
+                        <h1>@another.city_and_country 的 @another.name 向导为您服务</h1>
+                        <div align="right">
+                        <small > 您好 @session().get("username")</small>
+                    </div>
+                </div>
+                    } else {
+                        <h1>@another.name 向您咨询 </h1>
+                        <div align="right">
+                        <small > 您好 @session().get("username")</small>
+                    </div>
+                </div>
+                    }
+                -->
+          
+          
+          <!--
     <div id="onError" class="alert-message error">
         <p>
             <strong>Oops!</strong> <span></span>
