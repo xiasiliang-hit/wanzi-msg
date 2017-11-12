@@ -7,6 +7,7 @@ import models.AUser;
 import models.CmdNode;
 import play.libs.F.Callback;
 import play.libs.F.Callback0;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.WebSocket;
@@ -16,7 +17,10 @@ import actors.ChatCluster;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Application extends Controller {
 
@@ -31,8 +35,8 @@ public class Application extends Controller {
         }
         //测试用session数据
         AUser user = AUser.getUserById(userId);
-        session("username",user.name);
-        session("userId",user.id);
+        session("username", user.name);
+        session("userId", user.id);
         session("userType", user.type);
         //对方信息
         AUser another = AUser.getUserById(anotherId);
@@ -64,9 +68,28 @@ public class Application extends Controller {
         };
     }
 
-    public static Result test(){
+    public static Result getChatRooms(){
+        Map<String, String[]> formData = request().body().asFormUrlEncoded();
+        String userId = formData.get("userId")[0];
+        List<Map<String, Object>> chatList = new ArrayList<>();
+        List<String> roomList = RoomMessage.getRooms(userId);
+        //roomList.forEach((room)->{});
+        for (String room : roomList) {
+            AUser u = AUser.getUserById(room.replace(userId, ""));
+            if (u != null){
+                Map<String, Object> chat = new HashMap<>();
+                chat.put("chatId", room);
+                chat.put("name", u.name);
+                chatList.add(chat);
+            }
+        }
+        return ok(Json.toJson(chatList));
+    }
+
+    public static Result test() {
         List<CmdNode> cmds = CmdNode.findByCmdLeaf("@zz");
-        return ok("test");
+
+       return ok();
     }
 }
 

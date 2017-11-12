@@ -3,11 +3,12 @@
 # ~~~~
 
 # Home page
-GET     /                                controllers.Application.index()
-GET     /room                            controllers.Application.chatRoom(conversationId: String ?= null, userId: String ?= null,anotherId: String ?= null)
-GET     /room/chat                       controllers.Application.chat(conversationId, userId, username, anotherId)
-GET     /assets/javascripts/chatroom.js  controllers.Application.chatRoomJs(conversationId, userId, anotherId)
-
+GET         /                                      controllers.Application.index()
+GET         /room                                  controllers.Application.chatRoom(conversationId: String ?= null, userId: String ?= null,anotherId: String ?= null)
+GET         /room/chat                             controllers.Application.chat(conversationId, userId, username, anotherId)
+GET         /assets/javascripts/chatroom.js        controllers.Application.chatRoomJs(conversationId, userId, anotherId)
+#获取联系过的聊天
+POST        /room/getRooms                         controllers.Application.getChatRooms()
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file                    controllers.Assets.at(path="/public", file)
-GET     /test                            controllers.Application.test()
+GET         /assets/*file                          controllers.Assets.at(path="/public", file)
+GET         /test                                  controllers.Application.test()
