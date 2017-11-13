@@ -3,10 +3,11 @@
 
 @headerfooter(session.get("username")) {
 
-<div class="container col-sm-1" style="top:105px;left:60px;width:20px">
+<div id="chatRooms" class="container col-sm-1" style="top:105px;left:60px;width:20px">
   <a class="btn btn-info button" href="">用户1</a>
   <a class="btn btn-info button" href="">用户2</a>
   <a class="btn btn-info button" href="">用户3</a>
+
 </div>
 
 <div class="container">
@@ -23,6 +24,9 @@
                     } else {
                         <h1>@another.name 向您咨询 </h1>
                     }
+                    <div id="states">
+
+                    </div>
 
                 </div>
                 <!--我的想法 想放在一行 不知道行不行

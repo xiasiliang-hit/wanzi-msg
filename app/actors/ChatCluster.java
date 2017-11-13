@@ -15,11 +15,11 @@ import akka.cluster.Member;
 
 public class ChatCluster extends UntypedActor {
 
-	public static  ActorRef CHAT_CLUSTER;
+	public static ActorRef CHAT_CLUSTER;
 	private final Cluster cluster;
 	private final List<Member> clusterMemberList;
 	private final ActorRef chatRoom;
-        private final ActorRef bot;
+	private final ActorRef bot;
     
 	public ChatCluster() {
 		cluster = Cluster.get(getContext().system());

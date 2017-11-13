@@ -51,6 +51,12 @@ public class RoomMessage implements Serializable {
         return result.toArray();
     }
 
+    public static List<String> getRooms(String userId){
+        List<String> list = coll.distinct("conversationId");
+        list.removeIf((t)->!t.contains(userId));
+        return list;
+    }
+
     
     /*
     public static ArrayList<RoomMessage> getConversation(String username)

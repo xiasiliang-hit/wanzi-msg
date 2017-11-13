@@ -30,9 +30,11 @@ public class ChatMessageSender extends UntypedActor {
             switch (connection.connectionType) {
                 case CONNECTED:
                     channelsMap.add(connection.channel);
+                    tellStates("1");
                     break;
                 case DISCONNECTED:
                     channelsMap.remove(connection.channel);
+                    tellStates("0");
                     break;
             }
         } else if (message instanceof RoomMessage) {
@@ -47,12 +49,22 @@ public class ChatMessageSender extends UntypedActor {
         for (WebSocket.Out<JsonNode> channel : channelsMap) {
 
             ObjectNode event = Json.newObject();
+            event.put("type","message");
             event.put("kind", "talk");
             event.put("user", message.userName);
             event.put("message", message.message);
             event.put("dateTime", message.dateTime);
             channel.write(event);
 
+        }
+    }
+
+    private void tellStates(String states){
+        for (WebSocket.Out<JsonNode> channel : channelsMap) {
+            ObjectNode event = Json.newObject();
+            event.put("type","states");
+            event.put("states", states);
+            channel.write(event);
         }
     }
 
