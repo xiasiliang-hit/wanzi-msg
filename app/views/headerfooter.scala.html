@@ -1,6 +1,6 @@
 @(username:String)(content: Html)
-@import java.lang.String; val webserverhost="http://test.zouzouyouyou.info";
-@import java.lang.String; val statichost="http://static.zouzouyouyou.info";
+@import java.lang.String; val webserverhost="http://test.izouzou.cc";
+@import java.lang.String; val statichost="http://static.izouzou.cc";
 
 
 <!DOCTYPE html>
@@ -8,28 +8,28 @@
     
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-        <meta charset="utf-8">
+
+  <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
         <title>走走旅游</title>
 		<meta name="keywords" content="包车,地接,地陪,当地向导,当地导游,中文导游,私人导游,导游,旅游,自由行"/>
 		<meta name="description" content="走走旅游,专业预定私人中文导游,私人导游服务.提供导游相关的如:包车,地接,地陪,当地向导,当地导游,自由行等服务"/>
 
-        <link href="http://static.zouzouyouyou.info/app/statics/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://static.izouzou.cc/app/statics/css/bootstrap.min.css" rel="stylesheet">
         <link rel="shortcut icon" href="icon.png">
-        <link rel="stylesheet" href="http://static.zouzouyouyou.info/app/statics/css/common.css">
-        <link rel="stylesheet" href="http://static.zouzouyouyou.info/app/statics/css/swiper.min.css">
-		<link rel="stylesheet" href="http://static.zouzouyouyou.info/app/statics/emoji/emoji.css">
-		<link rel="stylesheet" href="http://static.zouzouyouyou.info/app/statics/js/promptbox/prompt_box.css">
-        <script src="http://static.zouzouyouyou.info/app/statics/js/jquery-1.8.3.min.js"></script>
-        <script src="http://static.zouzouyouyou.info/app/statics/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://static.izouzou.cc/app/statics/css/common.css">
+        <link rel="stylesheet" href="http://static.izouzou.cc/app/statics/css/swiper.min.css">
+		<link rel="stylesheet" href="http://static.izouzou.cc/app/statics/emoji/emoji.css">
+		<link rel="stylesheet" href="http://static.izouzou.cc/app/statics/js/promptbox/prompt_box.css">
+        <script src="http://static.izouzou.cc/app/statics/js/jquery-1.8.3.min.js"></script>
+        <script src="http://static.izouzou.cc/app/statics/js/bootstrap.min.js"></script>
         <!--<script src="js/global.js"></script>-->
-        <script src="http://static.zouzouyouyou.info/app/statics/js/search.js"></script>
-        <script src="http://static.zouzouyouyou.info/app/statics/js/remscreen.js"></script>
-        <script src="http://static.zouzouyouyou.info/app/statics/js/fastclick.js"></script>
-		<script src="http://static.zouzouyouyou.info/app/statics/js/promptbox/prompt_box.js"></script>
-
-    </head>
+        <script src="http://static.izouzou.cc/app/statics/js/search.js"></script>
+        <script src="http://static.izouzou.cc/app/statics/js/remscreen.js"></script>
+        <script src="http://static.izouzou.cc/app/statics/js/fastclick.js"></script>
+		<script src="http://static.izouzou.cc/app/statics/js/promptbox/prompt_box.js"></script>
+</head>
 
 	<body>
 
@@ -47,8 +47,8 @@
 			  <a href="site/search.html"><input type="text" placeholder="请输入您想去的国家、城市"><i></i></a>
 			</div>
 			-->
-			<a class="navbar-brand hidden-sm logo-web" href="http://www.zouzouyouyou.info/index.html"><img src="http://static.zouzouyouyou.info/app/statics/images/logo-web.png" alt=""></a>
-			<a class="navbar-brand hidden-sm logo-phone" href="http://www.zouzouyouyou.info/index.html"><img src="http://static.zouzouyouyou.info/app/statics/images/logo-phone.png" alt=""></a>
+			<a class="navbar-brand hidden-sm logo-web" href="@webserverhost/index.html"><img src="http://static.izouzou.cc/app/statics/images/logo-web.png" alt=""></a>
+			<a class="navbar-brand hidden-sm logo-phone" href="@webserverhost/index.html"><img src="http://static.izouzou.cc/app/statics/images/logo-phone.png" alt=""></a>
 		  </div>
 		  <div class="navbar-collapse collapse" role="navigation">
 			<ul class="nav navbar-nav nav-ul">
@@ -88,7 +88,9 @@
                     <li><a href="/register" class="login-section">注册</a></li>
                     <li><a href="/login" class="login-line">登录</a></li>
                 } else {
-                    <li style="padding: 15px;">欢迎您，@session().get("username")<a href="/logout" style="display: inline">退出登录</a></li>
+                    <li style="padding: 15px;">欢迎您，
+                @session().get("username")<button onclick="location='@webserverhost/logout'"
+                 style="display: inline">退出登录</button></li>
                 }
 			</ul>
 		  </div>
@@ -161,7 +163,7 @@
                 <div class="row text-bottom">
                     <div class="col-sm-6 col-xs-12">
                         <p class="text-color2 font-size1"></p>
-                        <p class="text-color2 font-size1">® 杭州观海听涛信息科技有限公司 2015-2017 zouzouyouyou.info </p>
+                        <p class="text-color2 font-size1">® 杭州观海听涛信息科技有限公司 2015-2017 izouzou.cc </p>
                     </div>
                 </div>
             </div>

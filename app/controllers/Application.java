@@ -24,13 +24,19 @@ import java.util.Map;
 
 public class Application extends Controller {
 
+	private newUserId = "999999999999999999999999";
+	
     public static Result index() {
         return ok(index.render());
     }
 
     public static Result chatRoom(String conversationId, String userId, String anotherId) {
+		if(userId == "")
+		{
+			userId = newUserId;
+		}
         if (userId == null || userId.trim().equals("") || anotherId == null || anotherId.trim().equals("")) {
-            flash("error", "Please choose a valid username.");
+			flash("error", "Please choose a valid username.");
             return redirect(routes.Application.index());
         }
         //测试用session数据
