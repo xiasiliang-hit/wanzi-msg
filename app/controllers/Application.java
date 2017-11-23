@@ -23,8 +23,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Application extends Controller {
-
-	private newUserId = "999999999999999999999999";
 	
     public static Result index() {
         return ok(index.render());
@@ -33,7 +31,7 @@ public class Application extends Controller {
     public static Result chatRoom(String conversationId, String userId, String anotherId) {
 		if(userId == "")
 		{
-			userId = newUserId;
+			userId = play.Configuration.root().getString("newuserid");
 		}
         if (userId == null || userId.trim().equals("") || anotherId == null || anotherId.trim().equals("")) {
 			flash("error", "Please choose a valid username.");
