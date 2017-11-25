@@ -2,14 +2,14 @@
 @(conversationId: String, userId: String, another: AUser, historyMessages: List[RoomMessage])
 
 @headerfooter(session.get("username")) {
-
+<!--
 <div id="chatRooms" class="container col-sm-1" style="top:105px;left:60px;width:20px">
   <a class="btn btn-info button" href="">用户1</a>
   <a class="btn btn-info button" href="">用户2</a>
   <a class="btn btn-info button" href="">用户3</a>
 
 </div>
-
+-->
 <div class="container">
             <div class="content">
 
@@ -20,14 +20,11 @@
 
                 <div class="page-header">
                     @if(another.`type`.equals("GUIDER")) {
-                        <h1>@another.city_and_country 的 @another.name 向导为您服务</h1>
+                        <h1>@another.city_and_country 的
+                    @another.name 向导为您服务 [<a id="states"></a>] </h1>
                     } else {
-                        <h1>@another.name 向您咨询 </h1>
+                        <h1>@another.name 向您咨询  <a id="states"></a> </h1>
                     }
-                    <div id="states">
-
-                    </div>
-
                 </div>
                 <!--我的想法 想放在一行 不知道行不行
                                 <div class="page-header">
@@ -69,6 +66,44 @@
                             </div>
                             <div id="msg-end" style="overflow: hidden"></div>
                         </div>
+
+
+<div>
+  </div>
+						
+						@if(userId.equals("5a045a17e4b05602646333dd")){
+						<div id="iti-div" class="#" style="position:absolute;top:-20px;left:820px">
+						  <h3 id="title-h3">定制行程单  <i><img src="http://www.wanzi.cc/app/statics/images/add-m.png"	 class="expandicon"></i></h3>
+						  <div id="itis" >
+						  <li>
+							<div class="tripHeader">
+							  <a href="http://tos.lushu.com/trip/share/YVwxn3R2LY9Kq9an"
+								 target="_blank">
+								<div class="coverIcon"><img src="http://tos.lushu.com/trip/share/YVwxn3R2LY9Kq9an/images/tos/tripView/tripIcon.png"	/>	</div>
+								<div class="title">荷兰羊角村 <i><img src="http://www.wanzi.cc/app/statics/images/add-m.png"
+								class="sendicon" /></i>
+								</div>
+							  </a>
+							  <button class="date">2017.11.02 -11.10</button>
+							</div>
+						  </li>
+						  <li>
+							<div class="tripHeader">
+							  <a href="http://tos.lushu.com/trip/share/4PBR75YJqKL0wLPo"
+								 target="_blank">
+								<div class="coverIcon"><img src="http://tos.lushu.com/trip/share/YVwxn3R2LY9Kq9an/images/tos/tripView/tripIcon.png"></div>
+								<div class="title">
+								  中国杭州西湖一日游
+								  <i><img src="http://www.wanzi.cc/app/statics/images/add-m.png"
+								  class="sendicon"></i>
+								</div>
+								</a>
+								<button class="date" type="button">2017.10.01-10.02</button>
+							</div>
+						  </li>
+						  </div>
+						</div>
+						}
                         <textarea id="talk"></textarea> <input class="btn" id="send" value="发送" type="button" onclick="sendMessage()">
                     </div>
                 </div>

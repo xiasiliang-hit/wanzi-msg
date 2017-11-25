@@ -141,3 +141,74 @@ h1 {
 	font-size:large;
 	color:skyblue;
 }
+
+
+.sendicon{
+	height:20px;
+	width:20px;
+	background-color:lightblue;
+	border-radius: 20px;
+	aligh:right;
+}
+
+.icon-right{
+	align:right;
+}
+
+.expandicon{
+	height:30px;
+	width:30px;
+}
+
+#title-h3{
+	font-size:medium;
+	color:skyblue;
+}
+
+.title{
+	font:sans-serif;
+	font-size:medium;
+	color:lightblue;
+}
+
+.date{
+	font:sans-serif;
+	font-size:small;
+	color:grey;
+}
+
+#iti-div{
+	width:180px;
+}
+
+
+#itis{
+	visible:hidden;
+}
+
+.cover .title{
+	position:relative;
+	left:0px;
+}
+
+.send-div{
+	position:relative;
+	right:0px;
+}
+
+
+
+
+.tripViewMainCover{
+	width:200px;
+	padding:10px;
+//	background-image: url(http://static.lushu.com//images/tos/tripView/coverBgPc.jpg);
+	background-size: cover;
+	background-color:skyblue;
+}
+
+#states{
+	font-size:small;
+	color:skyblue;
+}
+
