@@ -1,15 +1,19 @@
 @import messages.RoomMessage
 @(conversationId: String, userId: String, another: AUser, historyMessages: List[RoomMessage])
 
-@headerfooter(session.get("username")) {
-<!--
-<div id="chatRooms" class="container col-sm-1" style="top:105px;left:60px;width:20px">
-  <a class="btn btn-info button" href="">用户1</a>
-  <a class="btn btn-info button" href="">用户2</a>
-  <a class="btn btn-info button" href="">用户3</a>
 
-</div>
+
+@headerfooter(session.get("username")) {
+
+<link rel="stylesheet" href="http://static.izouzou.cc/app/statics/css/setting.css">
+
+<div id="chatRooms" class="container col-sm-1" style="top:95px;left:70px;">
+<!--  <a class="btn btn-active" type="button" href="">用户x</a>
+      <a class="btn btn-info button" href="">用户2</a>
+  <a class="btn btn-info button" href="">用户3</a>
 -->
+</div>
+
 <div class="container">
             <div class="content">
 
@@ -112,3 +116,9 @@
             </div>
         </div>
 }
+<style type="text/css">
+#chatRooms a{
+    height:30px;
+    width:60px;
+}
+</style>

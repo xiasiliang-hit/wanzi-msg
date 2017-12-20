@@ -116,7 +116,7 @@ window.onload = function () {
         success: function (data) {
             var html = "";
             for (var i in data) {
-                html = html + '<a class="btn btn-info button" href="/room?conversationId='+data[i].chatId+'&userId=@Html(userId)&anotherId='+data[i].chatId.replace("@Html(userId)", "")+'">'+data[i].name+'</a>';
+                html = html + '<a class="" type="button" style="background-color:white;color:skyblue;" href="/room?conversationId='+data[i].chatId+'&userId=@Html(userId)&anotherId='+data[i].chatId.replace("@Html(userId)", "")+'">'+data[i].name+'</a>';
             }
             $("#chatRooms").empty().append(html);
 
@@ -129,6 +129,9 @@ window.onload = function () {
 
 //$(document).ready(function() {
 //    $('.link').bind('click', function() {
+
+
+
 
 
 //	$.ajax({
